@@ -151,9 +151,7 @@ class AtleastOneFieldValidator(Validator):
 if __name__ == "__main__":
     example = {}
 
-    federation_validator = AllFieldsValidator("federation", [
-        OptionValidator(["foo", "bar"],"federation_provider"),
-        LengthValidator(1, 100,"federation_provider")])
+    federation_validator = AllFieldsValidator("federation", [ OptionValidator(["foo", "bar"],"federation_provider"), LengthValidator(1, 100,"federation_provider")])
     userid_validator = AllFieldsValidator("user_id", [LengthValidator(8, 12,"user_id")])
     password_validator = AllFieldsValidator("password", [MinLengthValidator(8, "password"), ContainsDigitValidator("password"), ContainsAlphanumericValidator("password")])
     email_validator = EmailValidator()
